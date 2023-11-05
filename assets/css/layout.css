@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  /* text-align: center; */
+  position: relative;
+  max-width: 100%;
+  background-color: rgb(232, 232, 232);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #layout-main {
+  min-height: 100vh; /* min ht would always be 100vh : this makes sure that footer also stays at the bottom always */
+  min-width: 55vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  margin: 15px 0 15px 0;
+}
+body #layout-main #feed-posts {
+  position: relative;
+  width: 60%;
+}
+body #layout-main #feed-posts ul {
+  list-style: none;
+  padding: 0;
+}
+body #layout-main #comment-form, body #layout-main #new-posts-form, body #layout-main #sign-up-form, body #layout-main #sign-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #layout-main input[type=submit] {
+  height: 2rem;
+  width: auto;
+  font-family: monospace;
+}
+body #layout-main textarea, body #layout-main input[type=text], body #layout-main input[type=email], body #layout-main input[type=password] {
+  line-height: 2rem;
+  border: 1px solid lightgrey;
+  padding: 0 10px 0 10px;
+  resize: none;
+}
+body #layout-main .post {
+  border: 1px solid lightsalmon;
+  padding: 0 0 0 15px;
+  margin: 0 0 15px 0;
+  border-radius: 5px;
+  background-color: rgb(255, 238, 231);
+}

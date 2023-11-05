@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<div id="home-container">
+    <section id="feed-posts">
+        <% if(locals.user) {%>
+            <h3 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Posts</h3>
+            <form action="/posts/create" id="new-posts-form" method="POST">
+                <textarea name="content" cols="40" rows="2" id="post-textarea" placeholder="Type Here..." required></textarea>
+                <br>
+                <input type="submit" value="Post">
+            </form>    
+        <% } %>
+    
+        <div id="posts-list-container">
+            <ul>
+                <!-- queries posts are sent to home view(to be displayed) from homeController -->
+                <% for(post of posts) {%>
+                    
+                    <%- include('_post') -%>
+    
+                <% } %>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- this section to be kept in aside section -->
+    <!-- a list of users to be displayed which links to the profile of the user -->
+    <section id="user-friends">
+        <h4>Friends</h4>
+        <% for(u of all_users) { %>
+            <p>
+                <a href="/users/profile/<%= u.id %>"> <%= u.name %> </a>
+            </p>
+        <% }%>
+    </section>
+    
+</div>
+
+<!-- including the js from a seperate file using src attr -->
+<!-- script for posts -->
+<script src="/js/home_posts.js"></script>
+<!-- script for comments >>> included in home_posts.js only bcz home_posts needs the code of comments.js -->
+<!-- <script src="/js/post_comments.js"></script> -->

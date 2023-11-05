@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <!--paste cdn links (here)-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+
+        <!-- to use AJAX for sending and receiving data > we require jquery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="/css/layout.css"> <!--don't write assets/css/layout.css => bcz it already knows where are the assets, so mention what is the specific asset-->
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <%- style %> <!--link tag from body is placed here-->
+    </head>
+    <body>
+
+        <%- include('_header'); %>
+
+        <!-- <% if(flash.success && flash.success.length > 0) { %>
+            <h5>
+                <%= flash.success %>
+            </h5>
+        <% } %> -->
+
+        <main id="layout-main">
+            <%- body %> <!--this body is predefined in express-ejs-layouts as the variable part that is rendered based on diff routes-->
+        </main>
+        
+        <%- include('_footer'); %>
+
+        <%- script %> <!--script tag from body is placed here-->
+        <script src="https://kit.fontawesome.com/4473696c92.js" crossorigin="anonymous"></script>
+
+        <script>
+            <% if(flash.success && flash.success.length > 0) { %>
+                new Noty({
+                    theme: 'relax', 
+                    text: "<%= flash.success %>",
+                    type: 'success',
+                    layout: 'topRight',
+                    timeout: 1500 // msec
+                }).show();
+            <% } %>
+
+            <% if(flash.error && flash.error.length > 0) { %>
+                new Noty({
+                    theme: 'relax', 
+                    text: "<%= flash.error %>",
+                    type: 'error',
+                    layout: 'topRight',
+                    timeout: 1500 // msec
+                }).show();
+            <% } %>
+
+            <% if(flash.warning && flash.warning.length > 0) { %>
+                new Noty({
+                    theme: 'relax', 
+                    text: "<%= flash.warning %>",
+                    type: 'warning',
+                    layout: 'topRight',
+                    timeout: 1500 // msec
+                }).show();
+            <% } %>
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,41 @@
+#layout-header {
+  width: 100vw;
+}
+#layout-header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  background: #2196f3;
+  color: white;
+  box-shadow: 1px 1px 1px 1px lightgrey;
+  height: 7vh;
+}
+#layout-header nav .mini-logo p {
+  margin: 5px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+#layout-header nav .auth-links {
+  height: inherit;
+}
+#layout-header nav .auth-links ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+}
+#layout-header nav .auth-links ul li {
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#layout-header nav .auth-links ul li img {
+  height: 80%;
+}
+#layout-header nav a {
+  color: white;
+  text-decoration: none;
+}

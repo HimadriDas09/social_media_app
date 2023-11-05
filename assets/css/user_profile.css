@@ -1,0 +1,25 @@
+body {
+  background-color: lightblue;
+}
+body #profile-picture-container, body #image-preview-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #profile-picture-container p, body #image-preview-container p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-weight: 600;
+}
+body #profile-picture-container img, body #image-preview-container img {
+  padding: 10px;
+  width: 15vw;
+}
+body #user-update-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+body #user-update-form input {
+  margin: 2%;
+}

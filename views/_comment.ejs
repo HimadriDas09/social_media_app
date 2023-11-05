@@ -1,0 +1,18 @@
+<!-- added an id to class and class to the deleteLink of the comment for them to be easily accessible -->
+<li id="comment-<%= comment._id %>">
+    <p>
+        <!-- to whom should the deleting a comment ability be available ? 
+        user should be logged in && the user of the comment should be our logged in user > then he can delete it -->
+        <!--locals.user &&  post.user.id == locals.user.id => if user who made the post is cur signed in : then also he can delete the comment -->
+        <% if((locals.user && comment.user.id == locals.user.id) || (locals.user && post.user.id == locals.user.id)) {%>
+            <small>
+                <a class = "delete-comment-button" href="/comments/destroy/<%=  comment.id %>"><i class="fa-solid fa-trash" style="color: #ff2424;"></i></a>
+            </small>
+        <% } %>
+        <strong style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: small;"><%= comment.content %></strong>
+        <br>
+        <small>
+            <%= comment.user.name %>
+        </small>
+    </p>
+</li>

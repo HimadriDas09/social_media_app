@@ -1,0 +1,49 @@
+#layout-header{
+    width: 100vw;
+    nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        background: #2196f3;
+        color: white;
+        box-shadow: 1px 1px 1px 1px lightgrey;
+        height: 7vh;
+
+        .mini-logo{
+            p{
+                margin: 5px;
+                font-size: 1.4rem;
+                font-weight: bold;
+            }
+        }
+
+        .auth-links{
+            height: inherit;
+            ul{
+                list-style: none;
+                margin: 0;
+                display: flex;
+                cursor: pointer;
+                display: flex;
+                height: 100%;
+
+                li{
+                    margin-right: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    
+                    img {
+                        height: 80%;
+                    }
+                }
+            }
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+        }
+
+    }
+}

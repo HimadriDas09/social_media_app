@@ -1,0 +1,59 @@
+@mixin flex-column-center {//can reuse this piece of code via @include mixin_name
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body{
+    margin: 0;
+    /* text-align: center; */
+    position: relative;
+    max-width: 100%;
+    background-color: rgb(232, 232, 232);
+    @include flex-column-center;
+
+    //how will the main page render
+    #layout-main{
+        min-height: 100vh; /* min ht would always be 100vh : this makes sure that footer also stays at the bottom always */
+        min-width: 55vw;
+        @include flex-column-center;
+        background-color: white;
+        border-radius: 5px;
+        margin: 15px 0 15px 0;
+        #feed-posts {
+            position: relative;
+            // background-color: white;
+            width: 60%;
+            ul {
+                // list-style-type: '🚩';
+                list-style: none;
+                padding: 0
+            }
+        }
+        #comment-form , #new-posts-form, #sign-up-form, #sign-in-form{
+            @include flex-column-center;
+        }
+        input[type="submit"] {
+            height: 2rem;
+            width: auto;
+            font-family: monospace;
+            // font-weight: bold;
+        }
+        textarea, input[type="text"], input[type="email"], input[type="password"]{
+            line-height: 2rem;
+            border: 1px solid lightgrey;
+            padding: 0 10px 0 10px;
+            resize: none; //for textarea
+            // &:focus{
+            //     border-color:rgb(0, 183, 255);
+            // }
+        }
+        .post {
+            border: 1px solid lightsalmon;
+            padding: 0 0 0 15px;
+            margin: 0 0 15px 0;
+            border-radius: 5px;
+            background-color: rgb(255, 238, 231);
+        }
+    }
+}
