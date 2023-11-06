@@ -40,7 +40,7 @@ const storage = multer.diskStorage({
 })
 
 
-// defining static methods
+// defining static methods > so that I can call functions directly from the model
 const maxsize = 1*1024*1024; // 1 MB is max-size to upload a file
 userSchema.statics.uploadedAvatar = multer({
     storage: storage,

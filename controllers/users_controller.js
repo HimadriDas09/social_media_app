@@ -29,8 +29,8 @@ module.exports.update = async function(req, res) {
             let user = await User.findById(req.params.id);
             User.uploadedAvatar(req, res, function(err) {
                 // error handling in multer
-                if(err || err instanceof multer.MulterError) {
-                    return res.flash('error', err);
+                if(err) {
+                    console.log('Multer error, err');
                 }
 
                 // console.log(req.file);
@@ -41,7 +41,7 @@ module.exports.update = async function(req, res) {
                 if(req.file) {
                     
                     // console.log(req.file);
-                    if(req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpg') {
+                    if(req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpg' || req.file.mimetype == 'image/jpeg') {
                         // check if uploaded file is an image > then only update the path
                         console.log('selected file is an image');
 

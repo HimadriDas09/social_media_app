@@ -24,6 +24,7 @@ userAvatarInput.addEventListener('change', function(){
 
             p.innerHTML = 'Image Preview';
 
+            // IMP: method to create a string containing an URL, takes file/blob object you want to create an URL for
             preview_image.src = URL.createObjectURL(file);
 
             image_preview_container.innerHTML = '';
